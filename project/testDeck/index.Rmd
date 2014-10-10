@@ -1,0 +1,97 @@
+---
+title       : Motor Trend Cars
+subtitle    : MPG Linear Regretion
+author      : Alex Ahumada
+job         : Data Scientist
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+---
+
+## Executive Summary
+
+This application help to realize the cars's relationship between miles per galon (MPG) and other variables in dataset. For this we have the folowing database:
+
+
+    Motor Trend Car Road Tests: The data was extracted from the 1974 Motor Trend US magazine, 
+    and comprises fuel consumption and 10 aspects of automobile design and performance for 32 
+    automobiles (1973-74 models). This aplication show scaterplot graphics and tendence line 
+    retulting of applying linear regression to a mtcars dataset.
+
+
+In this application version we only show linear regression with one regresors and used to identify the possible form of data in comparison to regression line.
+
+The next release will show the procedure to select variable in a multivariable linear regression.
+
+--- .class #id 
+
+## User Guide
+
+In this release you have to select a regresor for MPG variable and the application will show to you:
+
+- Scatterplot in case of variable it continuous.
+- Boxplot in case of variable it discrete.
+
+Enjoy it!
+
+--- .class #id 
+
+## Data Description Table
+
+The field in the data have the following meaning:
+
+  Variable | Description 
+  :-------:|:---------------
+  mpg      |Miles/(US) gallon        
+  cyl      |Number of cylinders      
+  disp     |Displacement (cu.in.)   
+  hp       |Gross horsepower         
+  drat     |Rear axle ratio          
+  wt       |Weight (lb/1000)         
+  qsec     |1/4 mile time            
+  vs       |V/S             
+  am       |Transmission (0 = automatic, 1 = manual)
+  gear     |Number of forward gears
+  carb     |Number of carburetors 
+
+--- .class #id 
+
+## Data Sample
+
+```{r}
+head(mtcars)
+```
+
+--- .class #id 
+
+## Proposed Model
+
+When the application will finnished we show how to reach the following linear model:
+
+    mpg ~ factor(am) + factor(cyl) + wt + hp
+
+The next table shown their coefficients:
+
+```{r, echo=FALSE}
+library(datasets)
+data(mtcars)
+
+fit <- lm(formula = mpg ~ factor(am) + factor(cyl) + wt + hp, data = mtcars)
+print( summary(fit)$coefficients )
+```
+
+--- .class #id 
+
+## Residual Plot
+
+The following graphics, called, "Residual Plots" are used to evaluate the "quality of model", will be reviewed in the next release:
+
+```{r, echo=FALSE}
+
+opar <- par(mfrow = c(2, 2))
+plot(fit)
+par( opar )
+
+```

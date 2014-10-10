@@ -1,0 +1,14 @@
+%latex.default(summary(fit))%
+\begin{table}[!tbp]
+\begin{center}
+\begin{tabular}{llrrrrrlrrrrrrrrrrr}
+\hline\hline
+\multicolumn{1}{c}{call}&\multicolumn{1}{c}{terms}&\multicolumn{1}{c}{residuals}&\multicolumn{1}{c}{coefficients Estimate}&\multicolumn{1}{c}{coefficients Std. Error}&\multicolumn{1}{c}{coefficients t value}&\multicolumn{1}{c}{coefficients Pr(\textgreater |t|)}&\multicolumn{1}{c}{aliased}&\multicolumn{1}{c}{sigma}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{r.squared}&\multicolumn{1}{c}{adj.r.squared}&\multicolumn{1}{c}{fstatistic}&\multicolumn{1}{c}{cov.unscaled (Intercept)}&\multicolumn{1}{c}{cov.unscaled factor(am)1}&\multicolumn{1}{c}{cov.unscaled factor(cyl)6}&\multicolumn{1}{c}{cov.unscaled factor(cyl)8}&\multicolumn{1}{c}{cov.unscaled wt}&\multicolumn{1}{c}{cov.unscaled hp}\tabularnewline
+\hline
+lm&~&$-1.41246041340106654$&$33.7083239012803872$&$2.6048861845038895$&$12.940421006417317$&$7.73339231241148e-13$&FALSE&$2.41011962975902$&$ 6$&$0.865879872486699$&$0.840087540272603$&$33.5712127658417$&$ 1.16815454994807e+00$&$-0.39658356775301357$&$ 0.07712199303946915$&$ 0.26571713794537932$&$-0.346752374114149664$&$ 4.55043288749709e-05$\tabularnewline
+mpg ~ factor(am) + factor(cyl) + wt + hp&mpg&$-0.77576891121073488$&$ 1.8092113829412162$&$1.3963045030137231$&$ 1.295714064544154$&$2.06459673769928e-01$&FALSE&$2.41011962975902$&$26$&$0.865879872486699$&$0.840087540272603$&$ 5.0000000000000$&$-3.96583567753014e-01$&$ 0.33564723764290388$&$ 0.06079169297200834$&$ 0.18964155944418351$&$ 0.127003170803109910$&$-1.66776609390833e-03$\tabularnewline
+mtcars&factor(am) + factor(cyl) + wt + hp&$-3.93871403985426793$&$-3.0313444905031566$&$1.4072835107157513$&$-2.154039656843133$&$4.06827179363789e-02$&FALSE&$2.41011962975902$&$ 6$&$0.865879872486699$&$0.840087540272603$&$26.0000000000000$&$ 7.71219930394691e-02$&$ 0.06079169297200834$&$ 0.34094631286399713$&$ 0.36519208049919366$&$-0.048301700406351067$&$-1.23237163244592e-03$\tabularnewline
+\hline
+\end{tabular}\end{center}
+
+\end{table}
