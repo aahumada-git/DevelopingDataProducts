@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Motor Trend Cars</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Motor Trend Cars">
+  <meta name="author" content="Alex Ahumada">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Motor Trend Cars</h1>
+    <h2>MPG Linear Regretion</h2>
+    <p>Alex Ahumada<br/>Data Scientist</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Executive Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This application help to realize the cars&#39;s relationship between miles per galon (MPG) and other variables in dataset. For this we have the folowing database:</p>
+
+<pre><code>Motor Trend Car Road Tests: The data was extracted from the 1974 Motor Trend US magazine, 
+and comprises fuel consumption and 10 aspects of automobile design and performance for 32 
+automobiles (1973-74 models). This aplication show scaterplot graphics and tendence line 
+retulting of applying linear regression to a mtcars dataset.
+</code></pre>
+
+<p>In this application version we only show linear regression with one regresors and used to identify the possible form of data in comparison to regression line.</p>
+
+<p>The next release will show the procedure to select variable in a multivariable linear regression.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>User Guide</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In this release you have to select a regresor for MPG variable and the application will show to you:</p>
+
+<ul class = "build incremental">
+<li>Scatterplot in case of variable it continuous.</li>
+<li>Boxplot in case of variable it discrete.</li>
+</ul>
+
+<p>Enjoy it!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Data Description Table</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The field in the data have the following meaning:</p>
+
+<table><thead>
+<tr>
+<th align="center">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">mpg</td>
+<td align="left">Miles/(US) gallon</td>
+</tr>
+<tr>
+<td align="center">cyl</td>
+<td align="left">Number of cylinders</td>
+</tr>
+<tr>
+<td align="center">disp</td>
+<td align="left">Displacement (cu.in.)</td>
+</tr>
+<tr>
+<td align="center">hp</td>
+<td align="left">Gross horsepower</td>
+</tr>
+<tr>
+<td align="center">drat</td>
+<td align="left">Rear axle ratio</td>
+</tr>
+<tr>
+<td align="center">wt</td>
+<td align="left">Weight (lb/1000)</td>
+</tr>
+<tr>
+<td align="center">qsec</td>
+<td align="left">1/4 mile time</td>
+</tr>
+<tr>
+<td align="center">vs</td>
+<td align="left">V/S</td>
+</tr>
+<tr>
+<td align="center">am</td>
+<td align="left">Transmission (0 = automatic, 1 = manual)</td>
+</tr>
+<tr>
+<td align="center">gear</td>
+<td align="left">Number of forward gears</td>
+</tr>
+<tr>
+<td align="center">carb</td>
+<td align="left">Number of carburetors</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Data Sample</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">head(mtcars)
+</code></pre>
+
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Proposed Model</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>When the application will finnished we show how to reach the following linear model:</p>
+
+<pre><code>mpg ~ factor(am) + factor(cyl) + wt + hp
+</code></pre>
+
+<p>The next table shown their coefficients:</p>
+
+<pre><code>##              Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)  33.70832    2.60489 12.9404 7.733e-13
+## factor(am)1   1.80921    1.39630  1.2957 2.065e-01
+## factor(cyl)6 -3.03134    1.40728 -2.1540 4.068e-02
+## factor(cyl)8 -2.16368    2.28425 -0.9472 3.523e-01
+## wt           -2.49683    0.88559 -2.8194 9.081e-03
+## hp           -0.03211    0.01369 -2.3450 2.693e-02
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Residual Plot</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The following graphics, called, &quot;Residual Plots&quot; are used to evaluate the &quot;quality of model&quot;, will be reviewed in the next release:</p>
+
+<p><img src="assets/fig/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Executive Summary'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='User Guide'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Data Description Table'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Data Sample'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Proposed Model'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Residual Plot'>
+         6
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
